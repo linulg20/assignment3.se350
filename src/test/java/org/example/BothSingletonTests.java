@@ -17,5 +17,21 @@ public class BothSingletonTests {
         EagerSingleton second = EagerSingleton.getInstance(1);
         assertSame(first, second, "same index needs to return the same object");
     }
+    @Test
+    public void testEArguementThrows() {
+        assertThrows(IllegalArgumentException.class,
+                () -> EagerSingleton.getInstance(-1),
+                "Negative index should throw IllegalArgumentException");
+        assertThrows(IllegalArgumentException.class,
+                () -> EagerSingleton.getInstance(3),
+                "Index greater than 2 should throw IllegalArgumentException");
+    }
+    @Test
+    public void testLValidOutputNotNull() {
+        for (int i = 0; i < 3; i++) {
+            LazySingleton lSingleton = LazySingleton.getInstance(i);
+            assertNotNull(lSingleton, "it should not be null for the index " + i);
+        }
+    }
 
 }
