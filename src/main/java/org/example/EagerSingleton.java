@@ -9,7 +9,7 @@ public class EagerSingleton {
     static {
         for (int i = 0; i < singleton.length; i++) { //an array to save every singleton
             singleton[i] = new EagerSingleton(i);
-            System.out.println("Created EagerSingleton #" + i);
+            System.out.println("Created EagerSingleton number" + i);
         }
     }
 
