@@ -33,5 +33,21 @@ public class BothSingletonTests {
             assertNotNull(lSingleton, "it should not be null for the index " + i);
         }
     }
+    @Test
+    public void testLSameIndexReturnSameObj() {
+        LazySingleton first = LazySingleton.getInstance(2);
+        LazySingleton second = LazySingleton.getInstance(2);
+        assertSame(first, second, "same index needs to return same object");
+    }
+    @Test
+    public void testLArguementThrows() {
+        assertThrows(IllegalArgumentException.class,
+                () -> LazySingleton.getInstance(-5),
+                "index that is less than 0 throws error");
+        assertThrows(IllegalArgumentException.class,
+                () -> LazySingleton.getInstance(99),
+                "index that is more than 2 throws error");
+    }
+
 
 }
