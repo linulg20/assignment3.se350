@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 /**
  *made another test for the 3 animals we added for sea , land  and the sky to see if
  * the output is the desired output, it is the same syntax and code of the main method
- * provided in the assignment
+ * provided in the assignment 3
  */
 public class AnimalFactoryTest {
 
