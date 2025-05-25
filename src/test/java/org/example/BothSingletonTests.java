@@ -4,7 +4,16 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BothSingletonTests {
+    /**
+     * test valid index return a object
+     * tests if same indexes treutn object
+     * tests to see if invalid indexis throw errors
+     */
     @Test
+    /**
+     *
+     * tests: should never return null at eagersingleton at index i between 0-2
+     */
     public void testEValidOutputNotNull() {
         for (int i = 0; i < 3; i++) {
             EagerSingleton eSingleton = EagerSingleton.getInstance(i);
@@ -12,11 +21,18 @@ public class BothSingletonTests {
         }
     }
     @Test
+    /**
+     *
+     * must return the very same object each time  Calling EagerSingleton.getInstance(1) twice
+     */
     public void testESameIndexReturnSameObj() {
         EagerSingleton first = EagerSingleton.getInstance(1);
         EagerSingleton second = EagerSingleton.getInstance(1);
         assertSame(first, second, "same index needs to return the same object");
     }
+    /**
+     * anything that less than 0 or more than 2 is going to have an illegal arugememtn excpetopin thrown
+     */
     @Test
     public void testEArguementThrows() {
         assertThrows(IllegalArgumentException.class,
