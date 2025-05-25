@@ -2,7 +2,8 @@ package org.example;
 import java.util.List;
 public class NaturalHistoryMuseum {
     public static void main(String[] args) {
-        AnimalAbstractFactory f = new CenozoicAnimalFactory();
+        AnimalEraAbstractFactory f = new CenozoicAnimalFactory();
+
         System.out.println("You are in the " + f.getEra() + " exhibition");
 
         System.out.println("===== " + f.getEra() + " land animals section =====");
