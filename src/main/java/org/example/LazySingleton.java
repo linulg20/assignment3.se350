@@ -30,7 +30,6 @@ public class LazySingleton {
         return LAZY_SINGLETONS[index];
     }
     /**
-     * See which one this is.
      * @return The instance’s number
      */
     public int getNum() {
